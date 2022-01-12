@@ -69,10 +69,11 @@ if ($isi["agama"]=='1'){
 			    <label><input type="radio"  id="jnsKelamin" name="jnsKelamin" value="<?php echo $isi['jenis_kelamin']?>"  required>Laki-laki</label>
 			    <label><input type="radio"  id="jnsKelamin" name="jnsKelamin" value="<?php echo $isi['jenis_kelamin']?>" required>Perempuan</label>
 			  </div>
+			  
+
 			  <div class="col-md-6">
 			    <label for="Agama" class="form-label">AGAMA</label>
-			    <select id="Agama" name="Agama" class="form-select" value="<?php echo $isi['agama']?>" required> 
-			      <option selected value="<?php echo $isi['agama']?>" ><?php echo $agm?></option>
+			    <select id="Agama" name="Agama" class="form-select" required> 
 			      <option selected>Silahkan Pilih...</option>
 			      <?php
   					foreach ($query as $agm){

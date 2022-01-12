@@ -143,6 +143,7 @@ $hasil = $ctrl->index();
     }
     ?>
     <p><a href="add.php"><button class="btn btn-primary btn-sm">+Daftar Siswa</button></a></p>
+    <p><a href="report.php"><button class="btn btn-primary btn-sm">Cetak Laporan</button></a></p>
     <a href="#" class="btn btn-danger btn-sm action-button" role="button" data-bs-toggle="modal" data-bs-target="#logout"><i class="bi bi-arrow-left-square">Logout</i></a>
     
     </div>

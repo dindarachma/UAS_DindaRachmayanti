@@ -12,15 +12,10 @@ class Auth{
 			$this->model = new Auth_model($conn);
 		}
 
-		function index(){
-			/*$hasil = $this->model->tampil_data();
-			return $hasil;*/
-		}
-
-		function Login(){
+		function login(){
 			if (isset($_POST['login'])) 
 			{
-				session_start()
+				session_start();
 /*				if ($_POST["code"] != $_SESSION["code"] OR $_SESSION["code"]=='') 
 */				$user = strip_tags($_POST['user']);
 				$pass = strip_tags($_POST['pass']);
@@ -39,7 +34,7 @@ class Auth{
 				}
 			}
 		}
-	}
+	
 
 
 		function acakCaptcha() {

@@ -87,6 +87,35 @@ class siswa_model {
 			return $row ->execute();
 		}
 
+		function simpanAgamaData($data)
+		{
+			//buat array untuk isi values 
+			$rowsSQL = array();
+
+			$toBind = array();
+
+			$columnNames = array_keys($data[0]);
+
+			foreach ($data as $arrayIndex => $row) {
+				$params = array();
+				foreach ($row as $columnName => $columnValue) {
+				
+				$param = ":".$columnName.$arrayIndex;
+				$params[] = $param;
+				$toBind[$param] = $columnValue;
+				}
+			
+			$rowsSQL[]="(".implode(", ", $params) . ")";
+		}
+			$sql = "INSERT INTO tbl_agama (".implode(", ", $columnNames).")VALUES".implode (", ", $rowsSQL);
+			$row = $this->db->prepare($sql);
+
+			foreach ($toBind as $param => $val) {
+			$row ->bindValue($param, $val);
+			}
+			return $row ->execute();
+		}
+
 		function updateData($data, $id)
 		{
 			$setPart = array();
